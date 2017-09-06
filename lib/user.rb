@@ -15,7 +15,13 @@ class User
   end
 
   def tell(name, joke)
-    name.jokes <<  joke
+    name.jokes << joke
   end
+
+  def perform_routine_for(name)
+   jokes.each {|joke| name.jokes << joke}
+  end
+
+  def learn_routine
 
 end
