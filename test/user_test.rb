@@ -40,6 +40,11 @@ class UserTest < Minitest::Test
   def test_if_tell_method_works
     ali = User.new("Ali")
     sal = User.new("Sal")
+    joke = Joke.new({id: 1, question: "Why did the strawberry cross the road?", answer: "Because his mother was in a jam."})
+    sal.tell(ali, joke)
+
+    assert_equal [joke], ali.jokes
+    assert_equal 1, ali.jokes.count
   end
 
 end

@@ -14,9 +14,8 @@ class User
     @jokes << joke
   end
 
-  def tell(ali, jokes)
-    
-
+  def tell(name, joke)
+    name.jokes <<  joke
   end
 
 end
