@@ -3,5 +3,20 @@ class User
 
   def initialize(name)
     @name = name
+    @jokes = []
   end
+
+  def jokes
+    @jokes
+  end
+
+  def learn(joke)
+    @jokes << joke
+  end
+
+  def tell(ali, jokes)
+    
+
+  end
+
 end
