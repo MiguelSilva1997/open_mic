@@ -3,6 +3,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/user'
 require './lib/joke'
+# require_relative 'open_mic/jokes.csv'
 
 class UserTest < Minitest::Test
   def test_it_exists
@@ -57,7 +58,14 @@ class UserTest < Minitest::Test
     ilana.perform_routine_for(josh)
 
     assert_equal [joke_1, joke_2], josh.jokes
-    assert_equal 2, josh.jokes.count 
+    assert_equal 2, josh.jokes.count
+  end
+
+  def test_if_learn_routine_works
+    casey = User.new("Casey")
+    casey.learn_routine('./jokes.csv')
+
+    assert_equal 100 , casey.jokes.count
   end
 
 end

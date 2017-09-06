@@ -1,3 +1,4 @@
+require 'csv'
 class User
   attr_reader :name
 
@@ -22,6 +23,8 @@ class User
    jokes.each {|joke| name.jokes << joke}
   end
 
-  def learn_routine
+  def learn_routine(file)
+    CSV.foreach(file) {|line| jokes << line }
+  end
 
 end
